@@ -1,0 +1,29 @@
+python manage.py shell
+
+
+	>>> from news.models import *
+
+	>>> u1 = User.objects.create_user(username='Yerzhan')
+	>>> u1
+	<User: Yerzhan>
+	>>> u2 = User.objects.create_user(username='Sergey')
+	>>> u2
+	<User: Sergey>
+	>>> u3 = User.objects.create_user(username='Igor')
+	>>> u3
+	<User: Igor>
+	>>> u4 = User.objects.create_user(username='Oleg')
+
+	>>> Author.objects.create(authorUser=u1)
+	<Author: Author object (1)>
+	>>> Author.objects.create(authorUser=u2)
+	<Author: Author object (2)>
+
+	>>> Category.objects.create(name='IT')
+	<Category: Category object (1)>
+	>>> Category.objects.create(name='Sport')
+	<Category: Category object (2)>
+	>>> Category.objects.create(name='Vehicles')
+	<Category: Category object (3)>
+	>>> Category.objects.create(name='Games')
+	<Category: Category object (4)>
